@@ -9,12 +9,12 @@ public class task_3 {
     public static void main(String[] args) {
         Scanner symbol = new Scanner(System.in);
         System.out.print("Enter num1 --> ");
-        float num1 = symbol.nextFloat();
+        double num1 = symbol.nextDouble();
         System.out.print("Enter action --> ");
         String action = symbol.next();
         System.out.print("Enter num2 -->  ");
-        float num2 = symbol.nextFloat();
-        float resultFloat = 0;
+        double num2 = symbol.nextDouble();
+        
         String a = "+";
         String b = "-";
         String c = "*";
@@ -29,10 +29,8 @@ public class task_3 {
         if (action.equals(c))
             System.out.print(num1*num2);
         
-        if (action.equals(d)){
-            resultFloat = num1/num2;
-            System.out.print(resultFloat);
-        }
+        if (action.equals(d))
+            System.out.print(num1/num2);
         
         symbol.close();
         }

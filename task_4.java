@@ -126,6 +126,8 @@ public class task_4 {
                         System.out.println("Равенство при заданных условиях достигнуто быть не может ");
                 }
 
+                equation.close();
+
             
         
 

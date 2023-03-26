@@ -20,6 +20,8 @@ public class task_1 {
         
         System.out.println(sum);
         System.out.println(fact);
+
+        number.close();
         
     } 
 }

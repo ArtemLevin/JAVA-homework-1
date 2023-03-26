@@ -14,16 +14,19 @@ public class task_4 {
     public static void main(String[] args) {
         
         Scanner equation = new Scanner(System.in);
-        System.out.println("Введите уравнение ");
+        System.out.print("Введите уравнение ");
         String my_equation = equation.nextLine();
         System.out.println("Вы ввели " + my_equation);
 
         int str_length = my_equation.length();
 
+            if (str_length != 12 & str_length != 13)
+                System.out.println("Ошибка формата ввода строки уравнения ");
+
             if (str_length == 12){ // если результатом уравнения является двузначное число, то во всей строке при правильном вводе должно быть 12 символов, считая пробелы
 
             int sum = 0;
-            int[] arr = new int[] {0, 1, 5, 6, 10, 11};// код написан для строгого формата ввода XX_+_YY_=_ZZ, нас интересуют цифры стоящие на позициях в массиве: 0, 1, 5, 6, 10, 11
+            int[] arr = new int[] {0, 1, 5, 6, 10, 11};// код написан для строгого формата ввода строки XX_+_YY_=_ZZ, нас интересуют цифры стоящие на позициях в строке: 0, 1, 5, 6, 10, 11
             int[] numarr = new int[6]; // инициализируем массив, который будет хранить цифры уравнения
 
             for (int i = 0; i < arr.length; i++) { // цикл позволяет определить цифры, которые известны и которые неизвестны
@@ -62,11 +65,12 @@ public class task_4 {
                     }
                 }
 
-                if (sum == result){// проверяем совпадает ли полученная сумма левой части уравнения для данного k с правой частью
+                if (sum == result){// проверяем совпадает ли для данного k полученная сумма левой части с правой частью уравнения
                     System.out.println("Искомая цифра " + k);
                     k = 10;
                 }
-                
+                if (k == 9 & sum != result)
+                    System.out.println("Равенство при заданных условиях достигнуто быть не может ");
             }
         
         }
@@ -117,6 +121,9 @@ public class task_4 {
                         System.out.println("Искомая цифра " + k);
                         k = 10;
                     }
+
+                    if (k == 9 & sum != result)
+                        System.out.println("Равенство при заданных условиях достигнуто быть не может ");
                 }
 
             
